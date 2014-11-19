@@ -1,0 +1,10 @@
+canvas {
+	border: 1px solid black;
+}
+.panel {
+	float: left;
+	height: 600px;
+	width: 200px;
+	margin-right: 3px;
+	border: 1px solid black;
+}
