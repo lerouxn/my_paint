@@ -11,9 +11,9 @@
 		couleurs <input type="color" onchange="myPaint.currentTool.color = this.value">
 		<ul>
 			<li onclick="myPaint.currentTool = myPaint.pen">crayon</li>
-			<li onclick="myPaint.currentTool = myPaint.rect">rectangle</li>
+			<li onclick="myPaint.currentTool = myPaint.rectangle">rectangle</li>
 			<li>cercles</li>
-			<li>ligne</li>
+			<li onclick="myPaint.currentTool = myPaint.line">ligne</li>
 			<li>bite</li>
 		</ul>
 	</div>
