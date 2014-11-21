@@ -1,10 +1,25 @@
 canvas {
 	border: 1px solid black;
+	position: absolute;
 }
-.panel {
+
+#tmp_canvas {
+	position: absolute;
+	left: 8px;
+	cursor: crosshair;
+}
+/* #tmp_canvas
+{
+position: absolute;
+left: 8px;
+opacity: 0.5;
+} */
+
+/* .panel {
 	float: left;
 	height: 600px;
 	width: 200px;
 	margin-right: 3px;
 	border: 1px solid black;
 }
+ */

@@ -10,10 +10,10 @@
 	<div class="panel">
 		couleurs <input type="color" onchange="myPaint.currentTool.color = this.value">
 		<ul>
-			<li onclick="myPaint.currentTool = myPaint.pen">crayon</li>
-			<li onclick="myPaint.currentTool = myPaint.rectangle">rectangle</li>
+			<li onclick="myPaint.currentTool = myPaint.pen"><a>crayon</a></li>
+			<li onclick="myPaint.currentTool = myPaint.rectangle"><a>rectangle</a></li>
 			<li>cercles</li>
-			<li onclick="myPaint.currentTool = myPaint.line">ligne</li>
+			<li onclick="myPaint.currentTool = myPaint.line"><a>ligne</a></li>
 			<li>bite</li>
 		</ul>
 	</div>
