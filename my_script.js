@@ -24,6 +24,7 @@ function MyPaint() {
 		y: 0
 	}
 	this.color = "#000000";
+	this.toolSize = ctx.lineWidth = 5;
 	this.clicked = false;
 	this.pen = new Pen();
 	this.rectangle = new Rectangle();
@@ -37,9 +38,11 @@ function Pen () {
 	this.old_x = 0,
 	this.old_y = 0,
 	this.color = this.color,
+	this.toolSize = this.toolSize,
 	this.draw = function () {
 		if (myPaint.clicked) {
 			ctx.beginPath();
+			ctx.lineWidth = this.toolSize;
 			ctx.strokeStyle = this.color;
 			ctx.moveTo(this.old_x, this.old_y);
 			ctx.lineTo(this.x, this.y);
@@ -50,7 +53,6 @@ function Pen () {
 	this.onMouseDown = function (x, y) {
 		this.old_x = x;
 		this.old_y = y;
-		// console.log("x :", + x + "y : " + y);
 	}
 	this.onMouseUp = function (x, y) {
 		
@@ -60,7 +62,6 @@ function Pen () {
 		this.old_y = this.y;
 		this.x = x;
 		this.y = y;
-		// console.log("x :", + x + "y : " + y);
 		this.draw();
 	}
 }
@@ -71,18 +72,16 @@ function Rectangle() {
 	this.old_x = 0,
 	this.old_y = 0,
 	this.color = this.color,
+	this.toolSize = this.toolSize,
 	this.draw = function () {
-		if (myPaint.clicked) {
-/*			var x = this.old_x;
-			var y = this.old_y;
-			*/			
+		if (myPaint.clicked) {		
 			var width = this.x - this.old_x;
 			var height = this.y - this.old_y;
-			console.log(this.x + " - " + this.y + " - " + this.old_x + " - " + this.old_y);
+			tmp_ctx.beginPath();
+			tmp_ctx.lineWidth = this.toolSize;
 			tmp_ctx.strokeStyle = this.color;
 			tmp_ctx.strokeRect(this.old_x, this.old_y, width, height);
 			tmp_ctx.strokeStyle = this.color;
-			console.log(this.old_x + " - " + this.old_y + " - " + width + " - " + height);
 		}
 	}
 
@@ -91,13 +90,12 @@ function Rectangle() {
 		this.old_y = y;
 	}
 	this.onMouseUp = function (x, y) {
-		// console.log("salut");
 		this.x = x;
 		this.y = y;
 		var width = this.x - this.old_x;
 		var height = this.y - this.old_y;
-		console.log(this.x + " - " + this.y);
-		// console.log("x :", + this.old_x + "y : " + this.old_y);
+		ctx.beginPath();
+		ctx.lineWidth = this.toolSize;
 		ctx.strokeStyle = this.color;
 		ctx.strokeRect(this.old_x, this.old_y, width, height);
 		ctx.strokeStyle = this.color;
@@ -113,35 +111,70 @@ function Rectangle() {
 
 function Line()
 {
+	this.x = 0,
+	this.y = 0,
+	this.old_x = 0,
+	this.old_y = 0,
+	this.color = this.color,
+	this.toolSize = this.toolSize,
 	this.draw = function()
 	{
 		if (myPaint.clicked) {
-			ctx.beginPath();
-			ctx.strokeStyle = this.color;
-			ctx.moveTo(this.old_x, this.old_y);
-			ctx.lineTo(this.x, this.y);
-			ctx.stroke();
-			ctx.closePath();
+			tmp_ctx.clearRect(0, 0, tmp_canvas.width, tmp_canvas.height);
+			tmp_ctx.beginPath();
+			tmp_ctx.lineWidth = this.toolSize;
+			tmp_ctx.moveTo(this.old_x, this.old_y);
+			tmp_ctx.lineTo(this.x, this.y);
+			tmp_ctx.strokeStyle = this.color;
+			tmp_ctx.stroke();
+			tmp_ctx.closePath();
 		}
 	}
 	this.onMouseDown = function (x, y) {
 		this.old_x = x;
 		this.old_y = y;
 		this.onMouseMove();
-		// console.log("x :", + x + "y : " + y);
+	}
+	this.onMouseUp = function (x, y) {
+		ctx.beginPath();
+		ctx.lineWidth = this.toolSize;
+		ctx.moveTo(this.old_x, this.old_y);
+		ctx.lineTo(this.x, this.y);
+		ctx.strokeStyle = this.color;
+		ctx.stroke();
+
+	}
+	this.onMouseMove = function (x, y) {
+		this.x = x;
+		this.y = y;
+		tmp_ctx.clearRect(0, 0, canvas.width, canvas.height);
+		this.draw();
+	}
+}
+
+/*function Circle()
+{
+	this.x = 0,
+	this.y = 0,
+	this.old_x = 0,
+	this.old_y = 0,
+	this.color = this.color,
+	this.draw = function()
+	{
+		if (myPaint.clicked) {
+
+		}
+	}
+	this.onMouseDown = function (x, y) {
+
 	}
 	this.onMouseUp = function (x, y) {
 
 	}
 	this.onMouseMove = function (x, y) {
-		this.old_x = this.x;
-		this.old_y = this.y;
-		this.x = x;
-		this.y = y;
-		// console.log("x :", + x + "y : " + y);
-		this.draw();
+
 	}
-}
+}*/
 
 tmp_canvas.addEventListener('mousedown', function(e) {
 	e.preventDefault();
