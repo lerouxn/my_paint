@@ -12,11 +12,14 @@
 		taille <input type="range" min="5" max="20" onclick="myPaint.currentTool.toolSize = this.value">
 
 		<ul>
-			<li onclick="myPaint.currentTool = myPaint.pen">crayon</li>
-			<li onclick="myPaint.currentTool = myPaint.rectangle">rectangle</li>
-			<li>Cercle</li>
-			<li onclick="myPaint.currentTool = myPaint.line">ligne</li>
-			<li>bite</li>
+			<li onclick="myPaint.currentTool = myPaint.pen"><button>Crayon</button></li>
+			<li onclick="myPaint.currentTool = myPaint.rectangle"><button>Rectangle</button></li>
+			<li onclick="myPaint.currentTool = myPaint.circle"><button>Cercle</button></li>
+			<li onclick="myPaint.currentTool = myPaint.ellipse"><button>Ellipse</button></li>
+			<li onclick="myPaint.currentTool = myPaint.line"><button>Ligne</button></li>
+			<li onclick="myPaint.currentTool = myPaint.autoline"><button>Auto ligne</button></li>
+			<li onclick="myPaint.currentTool = myPaint.eraser"><button>Auto ligne</button></li>
+			<li><button>Surprise !</button></li>
 		</ul>
 	</div>
 	<div id="meinPaint">
