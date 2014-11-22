@@ -2,5 +2,6 @@ objet
 outil merguez
 gomme
 taille des outils
+utilisation de GITHUB
 surprise et ellipse // to do
 split code // to do

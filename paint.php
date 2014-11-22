@@ -18,7 +18,7 @@
 			<li onclick="myPaint.currentTool = myPaint.ellipse"><button>Ellipse</button></li>
 			<li onclick="myPaint.currentTool = myPaint.line"><button>Ligne</button></li>
 			<li onclick="myPaint.currentTool = myPaint.autoline"><button>Auto ligne</button></li>
-			<li onclick="myPaint.currentTool = myPaint.eraser"><button>Auto ligne</button></li>
+			<li onclick="myPaint.currentTool = myPaint.eraser"><button>Gomme</button></li>
 			<li><button>Surprise !</button></li>
 		</ul>
 	</div>

@@ -45,7 +45,7 @@ function Pen () {
 	this.y = 0,
 	this.old_x = 0,
 	this.old_y = 0,
-	this.color = this.color,
+	this.color = "#000000",
 	this.toolSize = this.toolSize,
 	this.draw = function () {
 		if (myPaint.clicked) {
@@ -84,7 +84,7 @@ function Rectangle() {
 	this.y = 0,
 	this.old_x = 0,
 	this.old_y = 0,
-	this.color = this.color,
+	this.color = "#000000",
 	this.toolSize = this.toolSize,
 	this.draw = function () {
 		if (myPaint.clicked) {		
@@ -170,6 +170,12 @@ function Line()
 
 function AutoLine()
 {
+	this.x = 0,
+	this.y = 0,
+	this.old_x = 0,
+	this.old_y = 0,
+	this.color = this.color,
+	this.toolSize = this.toolSize,
 	this.draw = function()
 	{
 		if (myPaint.clicked) {
@@ -316,7 +322,6 @@ function Eraser () {
 	this.y = 0,
 	this.old_x = 0,
 	this.old_y = 0,
-	this.color = "white",
 	this.toolSize = this.toolSize,
 	this.draw = function () {
 		if (myPaint.clicked) {
@@ -324,7 +329,7 @@ function Eraser () {
 			ctx.lineWidth = this.toolSize;
 			ctx.lineCap = "round";
 			ctx.lineJoin = "round";
-			ctx.strokeStyle = this.color;
+			ctx.strokeStyle = "#FFFFFF";
 			ctx.moveTo(this.old_x, this.old_y);
 			ctx.lineTo(this.x, this.y);
 			ctx.stroke();
