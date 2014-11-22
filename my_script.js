@@ -156,6 +156,7 @@ function Line()
 		ctx.lineTo(this.x, this.y);
 		ctx.strokeStyle = this.color;
 		ctx.stroke();
+		ctx.strokeStyle = this.color;
 
 	}
 	this.onMouseMove = function (x, y) {
