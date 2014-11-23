@@ -129,7 +129,7 @@ function Line()
 	this.y = 0,
 	this.old_x = 0,
 	this.old_y = 0,
-	this.color = this.color,
+	this.color = "#000000",
 	this.toolSize = this.toolSize,
 	this.draw = function()
 	{
@@ -141,6 +141,7 @@ function Line()
 			tmp_ctx.lineTo(this.x, this.y);
 			tmp_ctx.strokeStyle = this.color;
 			tmp_ctx.stroke();
+			tmp_ctx.strokeStyle = this.color;
 			tmp_ctx.closePath();
 		}
 	}
@@ -175,17 +176,19 @@ function AutoLine()
 	this.y = 0,
 	this.old_x = 0,
 	this.old_y = 0,
-	this.color = this.color,
+	this.color = "#000000",
 	this.toolSize = this.toolSize,
 	this.draw = function()
 	{
 		if (myPaint.clicked) {
 			tmp_ctx.clearRect(0, 0, tmp_canvas.width, tmp_canvas.height);
 			tmp_ctx.beginPath();
+			tmp_ctx.lineWidth = this.toolSize;
 			tmp_ctx.moveTo(this.old_x, this.old_y);
 			tmp_ctx.lineTo(this.x, this.y);
 			tmp_ctx.strokeStyle = this.color;
 			tmp_ctx.stroke();
+			tmp_ctx.strokeStyle = this.color;
 			tmp_ctx.closePath();
 		}
 	}
@@ -218,7 +221,7 @@ function Circle()
 	this.y = 0,
 	this.old_x = 0,
 	this.old_y = 0,
-	this.color = this.color,
+	this.color = "#000000",
 	this.draw = function()
 	{
 		if (myPaint.clicked) {
@@ -230,6 +233,7 @@ function Circle()
 				Math.abs(this.y - this.old_y)
 				) / 2;
 			tmp_ctx.beginPath();
+			tmp_ctx.lineWidth = this.toolSize;
 			tmp_ctx.arc(x, y, radius, 0, Math.PI*2, false);
 			tmp_ctx.strokeStyle = this.color;
 			tmp_ctx.stroke();
@@ -250,6 +254,7 @@ function Circle()
 			Math.abs(this.y - this.old_y)
 			) / 2;
 		ctx.beginPath();
+		ctx.lineWidth = this.toolSize;
 		ctx.arc(x, y, radius, 0, Math.PI*2, false);
 		ctx.strokeStyle = this.color;
 		ctx.stroke();

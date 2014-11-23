@@ -1,5 +1,12 @@
+h1
+{
+	font-family: Courier New;
+	color: #0cbbc7;
+	font-size: 25px;
+}
+
 canvas {
-	border: 1px solid black;
+	border: solid #0cbbc7 3px;
 	position: absolute;
 }
 
@@ -8,18 +15,84 @@ canvas {
 	left: 8px;
 	cursor: crosshair;
 }
-/* #tmp_canvas
-{
-position: absolute;
-left: 8px;
-opacity: 0.5;
-} */
 
-/* .panel {
-	float: left;
-	height: 600px;
-	width: 200px;
+
+.panel {
+	float: right;
 	margin-right: 3px;
-	border: 1px solid black;
+	border: solid #0cbbc7 3px;
+
 }
- */
+
+input[type='range'] {
+	-webkit-appearance: none;
+	border-radius: 5px;
+	box-shadow: inset 0 0 5px #333;
+	background-color: #999;
+	height: 10px;
+	vertical-align: middle;
+}
+input[type='range']::-moz-range-track {
+	-moz-appearance: none;
+	border-radius: 5px;
+	box-shadow: inset 0 0 5px #333;
+	background-color: #999;
+	height: 10px;
+}
+input[type='range']::-webkit-slider-thumb {
+	-webkit-appearance: none !important;
+	border-radius: 20px;
+	background-color: #FFF;
+	box-shadow:inset 0 0 10px rgba(000,000,000,0.5);
+	border: solid #0cbbc7 1px;
+	height: 20px;
+	width: 20px;
+}
+input[type='range']::-moz-range-thumb {
+	-moz-appearance: none;
+	border-radius: 20px;
+	background-color: #FFF;
+	box-shadow:inset 0 0 10px rgba(000,000,000,0.5);
+	border: solid #0cbbc7 3px;
+	height: 20px;
+	width: 20px;
+}
+
+.btn {
+	background: #3498db;
+	background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+	background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+	background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+	background-image: -o-linear-gradient(top, #3498db, #2980b9);
+	background-image: linear-gradient(to bottom, #3498db, #2980b9);
+	font-family: Courier New;
+	color: #ffffff;
+	font-size: 25px;
+	padding: 10px 20px 10px 20px;
+	margin-bottom: 5px;
+	border: solid #0cbbc7 3px;
+	text-decoration: none;
+}
+
+.btn:hover {
+	background: #3cb0fd;
+	background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+	text-decoration: none;
+}
+
+.font
+{
+	font-family: Courier New;
+	color: #0cbbc7;
+	font-size: 15px;
+}
+
+.paint
+{
+content:url('http://i.imgur.com/wrJHXjy.jpg');
+width: 1890px;
+}
