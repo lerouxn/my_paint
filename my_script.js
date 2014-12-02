@@ -309,7 +309,7 @@ function Ellipse()
 			Math.abs(this.y - this.old_y)
 			) / 2;
 		ctx.beginPath();
-		ctx.arc(x, y, radius, 0, Math.PI*2, false);
+		ctx.arc(x, y, radius, 0, Math.PI*2, true);
 		ctx.strokeStyle = this.color;
 		ctx.stroke();
 		ctx.strokeStyle = this.color;
